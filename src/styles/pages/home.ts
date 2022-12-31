@@ -45,11 +45,13 @@ export const HomeContent = styled("div", {
 });
 
 export const ImageContent = styled(Image, {
-  width: "31.25rem",
-  height: "41.094rem",
-
   "@media(max-width: 1280px)": {
-    width: "70%",
-    height: "70%",
+    width: "25rem",
+    height: "32.875rem",
+  },
+
+  "@media(max-width: 768px)": {
+    width: "23.75rem",
+    height: "31.23125rem",
   }
 });
