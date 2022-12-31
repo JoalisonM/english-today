@@ -48,6 +48,11 @@ export const ImageContent = styled(Image, {
   width: "31.25rem",
   height: "41.094rem",
 
+  "@media(max-width: 1280px)": {
+    width: "80%",
+    height: "80%",
+  },
+
   "@media(max-width: 1080px)": {
     width: "70%",
     height: "70%",
