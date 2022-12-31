@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { styled } from "..";
 
 export const HomeContainer = styled("main", {
@@ -39,5 +41,15 @@ export const HomeContent = styled("div", {
         color: "$gray700",
       }
     },
+  }
+});
+
+export const ImageContent = styled(Image, {
+  width: "31.25rem",
+  height: "41.094rem",
+
+  "@media(max-width: 1080px)": {
+    width: "70%",
+    height: "70%",
   }
 });
