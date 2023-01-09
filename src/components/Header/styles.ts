@@ -16,9 +16,8 @@ export const HeaderContainer = styled("header", {
     display: "flex",
     gap: "4rem",
 
-    a: {
+    span: {
       fontSize: "20px",
-      textDecoration: "none",
       color: "white",
 
       "&.active": {

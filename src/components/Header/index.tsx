@@ -4,6 +4,7 @@ import Image from "next/image";
 import Switch from "../Switch";
 import { HeaderContainer } from "./styles";
 import logoImg from "../../assets/logo.svg";
+import ActiveLink from "../ActiveLink";
 
 export default function Header() {
   return (
@@ -13,8 +14,12 @@ export default function Header() {
         alt=""
       />
       <nav>
-        <a className="active" href="">Home</a>
-        <a href="">Content</a>
+        <ActiveLink activeClassName="active" href="/">
+          <span>Home</span>
+        </ActiveLink>
+        <ActiveLink activeClassName="active" href="/contents" prefetch>
+          <span>Contents</span>
+        </ActiveLink>
       </nav>
       <Switch />
     </HeaderContainer>
