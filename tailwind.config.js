@@ -23,6 +23,7 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Nunito', 'Inter', 'sans-serif'],
+      serif: ['Libre Baskerville', 'Georgia', 'Cambria', "Times New Roman", 'Times', 'serif']
     },
     extend: {
       colors: {

@@ -1,15 +1,24 @@
 <script setup lang="ts">
 import { ptBR } from 'date-fns/locale'
 import { RouterLink } from 'vue-router'
-import { Search } from 'lucide-vue-next'
-import { formatRelative } from 'date-fns'
+import { Bookmark, Search } from 'lucide-vue-next'
+import { format, formatDistanceToNow } from 'date-fns'
 
 import { contents } from '@/data/contents'
 import { Button } from '@/components/ui/button'
 import { InputRoot, Input, InputSuffix } from '@/components/ui/input'
 
-function formattedDate(value: Date) {
-  return formatRelative(value, new Date(), { locale: ptBR })
+function publishedDateFormat(value: Date) {
+  return format(value, "d 'de' LLLL 'às' HH:mm'h'", {
+    locale: ptBR,
+  })
+}
+
+function publishedDateRelativeToNow(value: Date) {
+  return formatDistanceToNow(value, {
+    locale: ptBR,
+    addSuffix: true,
+  })
 }
 </script>
 
@@ -32,17 +41,23 @@ function formattedDate(value: Date) {
 
     <section class="grid grid-cols-3 gap-4 mt-8">
       <RouterLink :to="`/contents/${content.id}`" v-for="content in contents"
-        class="rounded-lg shadow-sm cursor-pointer border object-cover border-zinc-200 bg-white">
-        <img :src="content.image" class="rounded-t-lg">
+        class="rounded-lg shadow-sm cursor-pointer border border-zinc-200 bg-white">
+        <img :src="content.image" class="h-40 rounded-t-lg object-cover">
         <div class="flex flex-col gap-4 p-4">
           <div class="space-y-2">
             <small class="font-semibold text-sm text-zinc-700">{{ content.category }}</small>
             <h1 class="font-bold text-xl">{{ content.title }}</h1>
           </div>
 
-          <span class="text-zinc-500">
-            {{ formattedDate(content.createdAt) }}
-          </span>
+          <div class="flex items-center justify-between text-zinc-400">
+            <time :title="publishedDateFormat(content.publishedAt)" :datetime="content.publishedAt.toISOString()">
+              {{ publishedDateRelativeToNow(content.publishedAt) }}
+            </time>
+
+            <Button variant="ghost" class="h-0 p-0 text-zinc-400 hover:bg-transparent">
+              <Bookmark :size="18" />
+            </Button>
+          </div>
         </div>
       </RouterLink>
     </section>
