@@ -16,8 +16,8 @@ function formattedDate(value: Date) {
 <template>
   <div class="flex flex-col w-full mt-12">
     <div class="flex justify-between">
-      <h1 class="font-bold text-4xl">
-        Your contents
+      <h1 class="font-bold text-3xl">
+        Our contents
       </h1>
 
       <InputRoot class="w-96">
@@ -37,7 +37,7 @@ function formattedDate(value: Date) {
         <div class="flex flex-col gap-4 p-4">
           <div class="space-y-2">
             <small class="font-semibold text-sm text-zinc-700">{{ content.category }}</small>
-            <h1 class="font-semibold text-xl">{{ content.title }}</h1>
+            <h1 class="font-bold text-xl">{{ content.title }}</h1>
           </div>
 
           <span class="text-zinc-500">
