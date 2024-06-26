@@ -3,7 +3,7 @@ import { Menu } from '@/components/Menu'
 </script>
 
 <template>
-  <div class="bg-zinc-100 text-zinc-900 text-base antialiased dark:bg-zinc-900 dark:text-zinc-100">
+  <div class="text-base antialiased bg-zinc-100 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100">
     <Menu />
 
     <main>

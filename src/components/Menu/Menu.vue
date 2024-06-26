@@ -4,6 +4,7 @@ import { Moon, Sun } from "lucide-vue-next"
 
 import { Item } from "."
 import { Switch } from '@/components/ui/switch'
+import DiscordIcon from '@/assets/discord-black.svg'
 
 const menus = [
   {
@@ -17,8 +18,13 @@ const menus = [
     slug: "/contents",
   },
   {
+    id: "recommendations",
+    name: "Recommendations",
+    slug: "/recommendations",
+  },
+  {
     id: "about",
-    name: "About me",
+    name: "About",
     slug: "/about",
   }
 ]
@@ -40,11 +46,18 @@ function handleSelectMenuItem(value: string) {
         <Item @click="handleSelectMenuItem(menu.id)" v-for="menu in menus" :key="menu.id" :name="menu.name"
           :slug="menu.slug" :is-selected="menu.id === selectedMenu" />
       </nav>
-      <div class="flex items-center gap-2">
-        <Sun :size="20" />
-        <Switch />
-        <Moon :size="20" />
+      <div class="flex items-center gap-6">
+        <div class="flex items-center gap-2">
+          <Sun :size="20" />
+          <Switch />
+          <Moon :size="20" />
+        </div>
+
+        <a href="https://discord.gg/english" target="_blank" class="cursor-pointer">
+          <img :src="DiscordIcon" class="h-5 w-5">
+        </a>
       </div>
+
     </div>
   </header>
 </template>

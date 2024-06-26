@@ -24,7 +24,7 @@ function formattedDate(value?: Date) {
 </script>
 
 <template>
-  <div class="flex flex-col items-center gap-12 mt-12">
+  <div class="flex flex-col items-center gap-12 mt-12 mb-24 w-full">
     <div class="w-full">
       <img :src="content?.image" class="w-full h-72 object-cover">
     </div>
@@ -39,10 +39,10 @@ function formattedDate(value?: Date) {
           <div class="flex items-center gap-4">
             <Avatar :src="content?.avatar" variant="bordered" />
 
-            <div class="flex flex-col gap-1 font-semibold">
+            <div class="flex flex-col gap-1 font-semibold text-zinc-700">
               {{ content?.author }}
               <span class="text-zinc-400">
-                Published in {{ formattedDate(content?.publishedAt) }}
+                Published on {{ formattedDate(content?.publishedAt) }}
               </span>
             </div>
           </div>

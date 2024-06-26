@@ -40,7 +40,7 @@ function publishedDateRelativeToNow(value: Date) {
     </div>
 
     <section class="grid grid-cols-3 gap-4 mt-8">
-      <RouterLink :to="`/contents/${content.id}`" v-for="content in contents"
+      <RouterLink :to="{ name: 'content', params: { id: content.id } }" v-for="content in contents"
         class="rounded-lg shadow-sm cursor-pointer border border-zinc-200 bg-white">
         <img :src="content.image" class="h-40 rounded-t-lg object-cover">
         <div class="flex flex-col gap-4 p-4">
